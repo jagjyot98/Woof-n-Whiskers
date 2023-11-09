@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "888999088223",
+    "project_id": "woofnwhiskers-login",
+    "storage_bucket": "woofnwhiskers-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888999088223:android:b87883e1f3f425a4c78bea",
+        "android_client_info": {
+          "package_name": "com.example.codeseasy.com.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzGtm6F82wYwTWm5xHy1ms7iTPUjQdgsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888999088223:android:a1beef0005cc1fa9c78bea",
+        "android_client_info": {
+          "package_name": "com.example.userregistration"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzGtm6F82wYwTWm5xHy1ms7iTPUjQdgsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888999088223:android:896f6757f1527777c78bea",
+        "android_client_info": {
+          "package_name": "com.example.wnw_login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzGtm6F82wYwTWm5xHy1ms7iTPUjQdgsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
