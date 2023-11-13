@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPostActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="2dp">
+        <!--Title-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_title"
+            android:id="@+id/pTitleEt"
+            android:padding="10dp"
+            android:singleLine="true"/>
+        <!-- post image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pImageIv"
+            android:background="@color/lightBrown"
+            android:minHeight="200sp"
+            />
+        <!--Post type-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_type_of_post"
+            android:id="@+id/pTypeEt"
+            android:padding="10dp"
+            android:singleLine="true"/>
+        <!--Location-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_city"
+            android:id="@+id/pLocationEt"
+            android:padding="10dp"
+            android:singleLine="true"/>
+        <!--Description-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_description"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minHeight="120dp"
+            android:gravity="start"
+            android:id="@+id/pDescriptionEt"
+            android:padding="10dp"
+            android:singleLine="true"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pUploadBtn"
+            android:background="@color/lightBrown"
+            android:layout_gravity="end"
+            android:text="@string/addpost"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
