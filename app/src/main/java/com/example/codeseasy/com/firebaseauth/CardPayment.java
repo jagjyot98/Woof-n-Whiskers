@@ -2,6 +2,7 @@ package com.example.codeseasy.com.firebaseauth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -66,8 +67,11 @@ public class CardPayment extends AppCompatActivity {
 
             // Placeholder for handling success case
             // Add logic for successful payment
-            Toast.makeText(CardPayment.this, "Payment successful!", Toast.LENGTH_SHORT).show();
+
+           // Toast.makeText(CardPayment.this, "Payment successful!", Toast.LENGTH_SHORT).show();
             clearFields();
+            Intent intent = new Intent(getApplicationContext(), SplashPayment.class);
+            startActivity(intent);
         } else {
             // Payment failed, handle failure case
 
