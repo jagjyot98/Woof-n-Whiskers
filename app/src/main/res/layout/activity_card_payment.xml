@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardPayment">
+
+    <TextView
+        android:id="@+id/cardPayment"
+        android:layout_width="412dp"
+        android:layout_height="61dp"
+        android:background="@color/brown"
+        android:backgroundTint="@color/brown"
+        android:drawableStart="@drawable/ic_back_arrow"
+        android:drawablePadding="8dp"
+        android:gravity="left|center"
+        android:paddingStart="16dp"
+        android:text="@string/cardPayment"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/cardName"
+        android:layout_width="389dp"
+        android:layout_height="58dp"
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:paddingStart="16dp"
+        android:hint="@string/nameonCard"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardPayment"
+        app:layout_constraintVertical_bias="0.034" />
+
+
+    <EditText
+        android:id="@+id/cardNumber"
+        android:layout_width="389dp"
+        android:layout_height="58dp"
+        android:background="@drawable/textview_border"
+        android:ems="10"
+        android:paddingStart="16dp"
+        android:hint="@string/cardNumber"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardName"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <EditText
+        android:id="@+id/expiryDate"
+        android:layout_width="167dp"
+        android:layout_height="62dp"
+        android:layout_weight="1"
+        android:background="@drawable/textview_border"
+        android:hint="@string/expiryDate"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <EditText
+        android:id="@+id/cvv"
+        android:layout_width="167dp"
+        android:layout_height="62dp"
+        android:layout_weight="1"
+        android:background="@drawable/textview_border"
+        android:hint="@string/cvv"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toEndOf="@+id/expiryDate"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:text="@string/checkbox"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/expiryDate"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <Button
+        android:id="@+id/payNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="@string/payNow"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:background="@color/brown"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payNow"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:src="@drawable/ic_home" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:src="@drawable/ic_services" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:src="@drawable/ic_profile" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

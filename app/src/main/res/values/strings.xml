@@ -9,4 +9,11 @@
     <string name="logout">Logout</string>
     <string name="firstName">Name</string>
     <string name="lastName">Last Name</string>
+    <string name="cardPayment">Card Payment</string>
+    <string name="nameonCard">Name On Card</string>
+    <string name="cardNumber">Enter your card number </string>
+    <string name="expiryDate">Expiry Date</string>
+    <string name="cvv">CVV</string>
+    <string name="checkbox">I have read and accepted the terms, rules and privacy policy</string>
+    <string name="payNow">Pay Now</string>
 </resources>
