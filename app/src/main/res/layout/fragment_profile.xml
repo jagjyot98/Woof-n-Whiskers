@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".ProfileFragment">
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Cover Photo-->
+            <ImageView
+                android:id="@+id/petPic"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/lightBrown"
+                android:scaleType="fitCenter">
+
+            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/linearLayout"
+                android:orientation="horizontal"
+                android:layout_marginTop="120dp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/displayPic"
+                    app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
+                    android:src="@drawable/ic_displaypic"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/black"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameLabel"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:text="@string/name"
+                android:layout_below="@+id/petPic"
+                android:layout_marginTop="90sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameFrbs"
+                android:textSize="20sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_below="@+id/petPic"
+                android:layout_marginTop="90sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailLabel"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:text="@string/email"
+                android:layout_below="@+id/nameLabel"
+                android:layout_marginTop="10sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailFrbs"
+                android:textSize="20sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:text="@string/abc_xyz_com"
+                android:layout_below="@+id/nameFrbs"
+                android:layout_marginTop="10sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/petLabel"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:text="@string/pet_type"
+                android:layout_below="@+id/emailLabel"
+                android:layout_marginTop="10sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/petTypeFrbs"
+                android:textSize="20sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/emailFrbs"
+                android:layout_marginTop="10sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneLabel"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:text="@string/phone_number"
+                android:layout_below="@+id/petLabel"
+                android:layout_marginTop="10sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneFrbs"
+                android:textSize="20sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:text="@string/xxx_xxx_xxxx"
+                android:layout_below="@+id/petTypeFrbs"
+                android:layout_marginTop="10sp"/>
+
+            <LinearLayout
+                android:id="@+id/servicesBox"
+                android:layout_below="@+id/phoneFrbs"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/rounded_corners_border"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="My Services"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp">
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/postsBox"
+                android:layout_below="@+id/servicesBox"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/rounded_corners_border"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="My Posts"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewPosts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp">
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+    
+<!-- Floating action button-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab"
+        android:src="@drawable/ic_edit_white"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10sp"/>
+
+
+</RelativeLayout>
