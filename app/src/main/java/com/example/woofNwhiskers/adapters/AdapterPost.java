@@ -1,10 +1,9 @@
-package com.example.communitypage.adapters;
+package com.example.woofNwhiskers.adapters;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -22,12 +21,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.example.communitypage.AddPostActivity;
-import com.example.communitypage.OtherProfileActivity;
-import com.example.communitypage.ProfileActivity;
-import com.example.communitypage.R;
-import com.example.communitypage.model.ModelPost;
+import com.example.woofNwhiskers.OtherProfileActivity;
+import com.example.woofNwhiskers.R;
+import com.example.woofNwhiskers.model.ModelPost;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,13 +37,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-
-import org.w3c.dom.Text;
-
-
 import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;

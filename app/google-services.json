@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "256932014395",
+    "firebase_url": "https://communitypage-default-rtdb.firebaseio.com",
     "project_id": "communitypage",
     "storage_bucket": "communitypage.appspot.com"
   },
@@ -10,6 +11,25 @@
         "mobilesdk_app_id": "1:256932014395:android:52d7bce961bf3ab9b4ef1e",
         "android_client_info": {
           "package_name": "com.example.communitypage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqOepdB0mvAtX2IfgCsFqvkvu1Cvs7pNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256932014395:android:79e54cee1b95d9d3b4ef1e",
+        "android_client_info": {
+          "package_name": "com.example.woofNwhiskers"
         }
       },
       "oauth_client": [],

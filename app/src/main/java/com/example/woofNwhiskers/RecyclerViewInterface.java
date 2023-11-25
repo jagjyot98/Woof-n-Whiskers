@@ -1,4 +1,4 @@
-package com.example.communitypage;
+package com.example.woofNwhiskers;
 
 public interface RecyclerViewInterface {
     void onItemClick(int position);

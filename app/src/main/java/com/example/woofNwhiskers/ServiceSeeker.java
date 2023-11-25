@@ -1,8 +1,7 @@
-package com.example.communitypage;
+package com.example.woofNwhiskers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

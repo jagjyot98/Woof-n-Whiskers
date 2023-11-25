@@ -1,8 +1,9 @@
-package com.example.communitypage;
+package com.example.woofNwhiskers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,7 +30,6 @@ public class ServiceDetails extends AppCompatActivity {
     FirebaseUser user;
     StorageReference storageReference;
     DatabaseReference databaseReference;
-
     String ProvName, ProvImage;
     @Override
     public void onBackPressed(){
@@ -45,6 +45,7 @@ public class ServiceDetails extends AppCompatActivity {
 
         TextView servDate, servType, servPetType, servDesc, servProvName;
         ImageView displaypic;
+        Button buttonProceedPayment;
 
         displaypic = findViewById(R.id.displayPic);
         servProvName = findViewById(R.id.servProvName);
@@ -52,6 +53,7 @@ public class ServiceDetails extends AppCompatActivity {
         servType = findViewById(R.id.servType);
         servPetType = findViewById(R.id.servPetType);
         servDesc = findViewById(R.id.servDesc);
+        buttonProceedPayment = findViewById(R.id.buttonProceedPayment);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -103,6 +105,15 @@ public class ServiceDetails extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        buttonProceedPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CardPayment.class);
+                startActivity(intent);
+                finish();
             }
         });
 //        Log.i("ProvName",ProvName);

@@ -1,4 +1,4 @@
-package com.example.communitypage;
+package com.example.woofNwhiskers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +20,8 @@ import android.view.ViewGroup;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.communitypage.adapters.AdapterPost;
-import com.example.communitypage.model.ModelPost;
+import com.example.woofNwhiskers.adapters.AdapterPost;
+import com.example.woofNwhiskers.model.ModelPost;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

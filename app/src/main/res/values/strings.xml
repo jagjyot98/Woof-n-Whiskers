@@ -6,6 +6,13 @@
     <string name="first_name">First Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="cardPayment">Card Payment</string>
+    <string name="nameonCard">Name On Card</string>
+    <string name="cardNumber">Enter your card number </string>
+    <string name="expiryDate">Expiry Date</string>
+    <string name="cvv">CVV</string>
+    <string name="checkbox">I have read and accepted the terms, rules and privacy policy</string>
+    <string name="payNow">Pay Now</string>
     <string name="myprofile">MyProfile</string>
     <string name="already_have_an_account_login">Already have an account? Login</string>
     <string name="not_have_an_account_register">Not have an account? Register</string>

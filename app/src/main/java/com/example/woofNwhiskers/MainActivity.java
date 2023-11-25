@@ -1,4 +1,4 @@
-package com.example.communitypage;
+package com.example.woofNwhiskers;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

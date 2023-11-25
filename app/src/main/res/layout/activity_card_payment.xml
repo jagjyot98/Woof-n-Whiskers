@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardPayment">
+
+    <TextView
+        android:id="@+id/cardPayment"
+        android:layout_width="412dp"
+        android:layout_height="61dp"
+        android:background="@color/brown"
+        android:backgroundTint="@color/brown"
+        android:drawablePadding="8dp"
+        android:gravity="left|center"
+        android:paddingStart="16dp"
+        android:text="@string/cardPayment"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/cardName"
+        android:layout_width="389dp"
+        android:layout_height="58dp"
+        android:background="@drawable/rounded_corners_border"
+        android:ems="10"
+        android:paddingStart="16dp"
+        android:hint="@string/nameonCard"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardPayment"
+        app:layout_constraintVertical_bias="0.034" />
+
+
+    <EditText
+        android:id="@+id/cardNumber"
+        android:layout_width="389dp"
+        android:layout_height="58dp"
+        android:background="@drawable/rounded_corners_border"
+        android:ems="10"
+        android:paddingStart="16dp"
+        android:hint="@string/cardNumber"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardName"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <EditText
+        android:id="@+id/expiryDate"
+        android:layout_width="167dp"
+        android:layout_height="62dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_corners_border"
+        android:hint="@string/expiryDate"
+        android:textSize="20sp"
+        android:paddingStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <EditText
+        android:id="@+id/cvv"
+        android:layout_width="167dp"
+        android:layout_height="62dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_corners_border"
+        android:hint="@string/cvv"
+        android:paddingStart="16dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toEndOf="@+id/expiryDate"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:text="@string/checkbox"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/expiryDate"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <Button
+        android:id="@+id/payNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/payNow"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox"
+        app:layout_constraintVertical_bias="0.565" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

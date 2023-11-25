@@ -1,4 +1,4 @@
-package com.example.communitypage;
+package com.example.woofNwhiskers;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.communitypage.databinding.FragmentFirstBinding;
+import com.example.woofNwhiskers.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 

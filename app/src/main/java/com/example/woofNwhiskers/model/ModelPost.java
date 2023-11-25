@@ -1,4 +1,4 @@
-package com.example.communitypage.model;
+package com.example.woofNwhiskers.model;
 
 public class ModelPost {
     String uid, uName, uEmail, uDp, pId, pLikes, pTitle, pType, pLocation, pDescription, pImage, pTime;

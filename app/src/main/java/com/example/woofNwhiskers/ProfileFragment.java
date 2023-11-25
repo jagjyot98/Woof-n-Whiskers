@@ -1,4 +1,4 @@
-package com.example.communitypage;
+package com.example.woofNwhiskers;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -8,16 +8,13 @@ import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SyncRequest;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.PackageManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,9 +33,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.communitypage.adapters.AdapterPost;
-import com.example.communitypage.model.ModelPost;
-import com.google.android.gms.auth.api.signin.internal.Storage;
+import com.example.woofNwhiskers.adapters.AdapterPost;
+import com.example.woofNwhiskers.model.ModelPost;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -58,12 +54,8 @@ import com.google.firebase.storage.UploadTask;
 
 import com.squareup.picasso.Picasso;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
-import java.util.Objects;
 
 
 public class ProfileFragment extends Fragment implements RecyclerViewInterface {
