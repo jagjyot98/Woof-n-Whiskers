@@ -70,7 +70,7 @@ public ModelPost(String uid,String uName,String uEmail,String uDp,String pId,Str
     }
 
     public void setpLikes(String pLikes) {
-        this.pId = pLikes;
+        this.pLikes = pLikes;
     }
 
     public String getpTitle() {

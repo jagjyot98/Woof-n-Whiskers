@@ -3,7 +3,9 @@ package com.example.woofNwhiskers.adapters;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,7 +23,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import com.example.woofNwhiskers.AddPostActivity;
 import com.example.woofNwhiskers.OtherProfileActivity;
+import com.example.woofNwhiskers.ProfileActivity;
 import com.example.woofNwhiskers.R;
 import com.example.woofNwhiskers.model.ModelPost;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -37,7 +42,13 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+
+import org.w3c.dom.Text;
+
+
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -48,7 +59,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
 
     String myUid;
 
-    private DatabaseReference likesRef; //for likes database node
+    public DatabaseReference likesRef; //for likes database node
     private DatabaseReference postsRef; //reference of posts
 
     boolean mProcessLike=false;
@@ -74,14 +85,9 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         //get Data
         String uid = postList.get(position).getUid();
-
-
         String uEmail = postList.get(position).getuEmail();
-
         String uName = postList.get(position).getuName();
-
         String uDp = postList.get(position).getuDp();
-
         String pId = postList.get(position).getpId();
         String pType= postList.get(position).getpType();
         String pLocation = postList.get(position).getpLocation();
@@ -91,7 +97,8 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         String pImage = postList.get(position).getpImage();
         String pTimeStamp = postList.get(position).getpTime();
         String pLikes= postList.get(position).getpLikes();// contains like numbers
-
+        //final String likesCount = postList.get(position).getpLikes();
+        //final int pLikes = likesCount != null ? Integer.parseInt(likesCount) : 0;
         //convert timestamp to dd/mm/yyyy hh:mm am/pm
         Calendar calendar = Calendar.getInstance(Locale.getDefault());
         calendar.setTimeInMillis(Long.parseLong(pTimeStamp));
@@ -104,8 +111,11 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         holder.plocationtv.setText(pLocation);
         holder.pTitleTv.setText(pTitle);
         holder.pDescriptionTv.setText(pDescription);
-        String likes = context.getString(R.string.likes);
+
         holder.pLikesTv.setText(pLikes+"Likes");
+
+        Log.d("AdapterPost", "pLikes: " + pLikes);
+        Log.d("AdapterPost", "Descr: " + pDescription);
         //set likes for each posts
         setLikes(holder,pId);
         //Log.d("AdapterPost", "uName: " + uName);
@@ -151,7 +161,49 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         holder.likeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Comment", Toast.LENGTH_SHORT).show();
+                //get total number of likes for the post, whose like button clicked
+                //if currently signed in user has not liked it before
+                //increase value by 1, otherwise decrease value by 1
+                //String likesCount = postList.get(position).getpLikes();
+
+                //final int pLikes;
+
+                //if (likesCount != null) {
+                //   pLikes = Integer.parseInt(likesCount);
+                //} else {
+                //   pLikes = 0;
+                //}
+
+                final int pLikes = Integer.parseInt(postList.get(position).getpLikes());
+                mProcessLike = true;
+                //get id of the post clicked
+                final String postIde = postList.get(position).getpId();
+                likesRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (mProcessLike){
+                            if (dataSnapshot.child(postIde).hasChild(myUid)){
+                                //already liked, so remove like
+                                postsRef.child(postIde).child("pLikes").setValue(""+(pLikes-1));
+                                likesRef.child(postIde).child(myUid).removeValue();
+                                mProcessLike = false;
+                            }
+                            else {
+                                // not liked, like it
+                                postsRef.child(postIde).child("pLikes").setValue(""+(pLikes+1));
+                                likesRef.child(postIde).child(myUid).setValue("Liked"); //set any value
+                                mProcessLike = false;
+
+
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
         holder.commentBtn.setOnClickListener(new View.OnClickListener() {
@@ -191,6 +243,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
                     Change text of like button from "Like" to "Liked"*/
                     holder.likeBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_liked, 0,0,0);
                     holder.likeBtn.setText("Liked");
+                    holder.likeBtn.setTextColor(Color.RED);
                 }
                 else {
                     //user has not liked this post
@@ -200,6 +253,8 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
                     holder.likeBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_like, 0,0,0);
                     holder.likeBtn.setText("Like");
                 }
+
+
             }
 
             @Override
