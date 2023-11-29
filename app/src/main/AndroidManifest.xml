@@ -21,22 +21,22 @@
         android:theme="@style/Theme.CommunityPage"
         tools:targetApi="31">
         <activity
-            android:name=".SplashPayment"
+            android:name="com.example.woofNwhiskers.SplashPayment"
             android:exported="false" />
         <activity
-            android:name=".CardPayment"
+            android:name="com.example.woofNwhiskers.CardPayment"
             android:exported="false" />
         <activity
-            android:name=".OtherProfileActivity"
+            android:name="com.example.woofNwhiskers.OtherProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".AddPostActivity"
+            android:name="com.example.woofNwhiskers.AddPostActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.woofNwhiskers.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.example.woofNwhiskers.ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,19 +45,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.woofNwhiskers.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.woofNwhiskers.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ServiceDetails"
+            android:name="com.example.woofNwhiskers.ServiceDetails"
             android:exported="false" />
         <activity
-            android:name=".ServiceSeeker"
+            android:name="com.example.woofNwhiskers.ServiceSeeker"
             android:exported="false" />
         <activity
-            android:name=".ServiceProviderNConfirm"
+            android:name="com.example.woofNwhiskers.ServiceProviderNConfirm"
             android:exported="false" />
     </application>
 

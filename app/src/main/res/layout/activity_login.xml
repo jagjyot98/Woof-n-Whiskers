@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/login_activity_layout"
     android:padding="20dp"
-    tools:context=".LoginActivity">
+    tools:context="com.example.woofNwhiskers.LoginActivity">
 
 
     <TextView

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".ServiceProviderNConfirm">
+    tools:context="com.example.woofNwhiskers.ServiceProviderNConfirm">
 
     <EditText
         android:id="@+id/serviceDate"

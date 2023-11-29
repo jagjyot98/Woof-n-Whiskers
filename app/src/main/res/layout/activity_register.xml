@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/register_activity_layout"
     android:padding="20dp"
-    tools:context=".RegisterActivity">
+    tools:context="com.example.woofNwhiskers.RegisterActivity">
 
 
     <TextView
