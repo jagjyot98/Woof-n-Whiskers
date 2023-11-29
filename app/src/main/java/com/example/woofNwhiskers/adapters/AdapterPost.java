@@ -23,11 +23,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.example.woofNwhiskers.AddPostActivity;
+import com.example.codeseasy.com.firebaseauth.R;
 import com.example.woofNwhiskers.OtherProfileActivity;
-import com.example.woofNwhiskers.ProfileActivity;
-import com.example.woofNwhiskers.R;
 import com.example.woofNwhiskers.model.ModelPost;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,13 +39,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-
-import org.w3c.dom.Text;
-
-
 import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -121,9 +112,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         //Log.d("AdapterPost", "uName: " + uName);
 
 
-
-
-
         //set user dp
         try{
             Picasso.get().load(uDp).placeholder(R.drawable.ic_displaypic).into(holder.uPictureIv);
@@ -193,8 +181,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
                                 postsRef.child(postIde).child("pLikes").setValue(""+(pLikes+1));
                                 likesRef.child(postIde).child(myUid).setValue("Liked"); //set any value
                                 mProcessLike = false;
-
-
                             }
                         }
                     }
@@ -253,8 +239,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
                     holder.likeBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_like, 0,0,0);
                     holder.likeBtn.setText("Like");
                 }
-
-
             }
 
             @Override
@@ -393,7 +377,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         Button likeBtn, commentBtn, shareBtn;
         LinearLayout profileLayout;
 
-
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             //init views
@@ -410,9 +393,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
             commentBtn = itemView.findViewById(R.id.commentBtn);
             shareBtn = itemView.findViewById(R.id.shareBtn);
             profileLayout = itemView.findViewById(R.id.profileLayout);
-
-
-
         }
     }
 }

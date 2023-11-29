@@ -9,6 +9,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.codeseasy.com.firebaseauth.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;

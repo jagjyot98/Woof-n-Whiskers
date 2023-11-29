@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.codeseasy.com.firebaseauth.R;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

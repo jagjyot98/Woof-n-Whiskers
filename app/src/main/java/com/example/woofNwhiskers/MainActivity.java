@@ -3,6 +3,7 @@ package com.example.woofNwhiskers;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.codeseasy.com.firebaseauth.R;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

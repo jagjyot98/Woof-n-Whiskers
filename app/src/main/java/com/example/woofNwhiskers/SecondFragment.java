@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.codeseasy.com.firebaseauth.R;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.woofNwhiskers.databinding.FragmentSecondBinding;
+import com.example.codeseasy.com.firebaseauth.databinding.FragmentSecondBinding;
+
 
 public class SecondFragment extends Fragment {
 

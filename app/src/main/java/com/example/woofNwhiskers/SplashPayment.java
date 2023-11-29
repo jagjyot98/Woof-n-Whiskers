@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.codeseasy.com.firebaseauth.R;
+
 public class SplashPayment extends AppCompatActivity {
 
     @Override

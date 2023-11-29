@@ -9,7 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.woofNwhiskers.databinding.FragmentFirstBinding;
+import com.example.codeseasy.com.firebaseauth.R;
+import com.example.codeseasy.com.firebaseauth.databinding.FragmentFirstBinding;
+
 
 public class FirstFragment extends Fragment {
 

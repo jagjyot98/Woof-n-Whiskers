@@ -8,7 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.woofNwhiskers.databinding.ActivityCardPaymentBinding;
+import com.example.codeseasy.com.firebaseauth.databinding.ActivityCardPaymentBinding;
+
 
 public class CardPayment extends AppCompatActivity {
 

@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.codeseasy.com.firebaseauth.R;
 import com.example.woofNwhiskers.adapters.AdapterPost;
 import com.example.woofNwhiskers.model.ModelPost;
 import com.google.firebase.auth.FirebaseAuth;
