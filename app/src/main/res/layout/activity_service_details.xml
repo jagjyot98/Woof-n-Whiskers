@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context="com.example.woofNwhiskers.ServiceDetails">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="android:background=&quot;@drawable/rounded_corners&quot;" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -115,11 +121,11 @@
 
     <Button
         android:id="@+id/buttonProceedPayment"
-        android:layout_width="wrap_content"
+        android:layout_width="198dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:backgroundTint="#5B3818"
+        android:background="@drawable/rounded_corners"
         android:text="Proceed payment"
         android:textColor="#FDFDFC"
         android:textSize="20sp" />

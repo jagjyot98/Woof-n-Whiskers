@@ -23,7 +23,9 @@
         android:id="@+id/navigation"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/lightBrown"
+        android:background="@color/brown"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
         app:menu="@menu/menu_nav">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>

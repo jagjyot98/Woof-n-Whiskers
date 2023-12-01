@@ -79,7 +79,10 @@
         android:layout_below="@id/passwordTil"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/register" />
+        android:text="@string/register"
+        android:background="@drawable/rounded_corners"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/have_account"

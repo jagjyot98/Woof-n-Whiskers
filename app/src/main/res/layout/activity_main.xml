@@ -11,28 +11,32 @@
     <ImageView
         android:layout_height="250dp"
         android:layout_width="250dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/ic_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         />
-    
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/register_btn"
-        android:text="@string/register"
-        android:layout_above="@+id/login_btn"
-        />
-
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/login_btn"
-        android:text="@string/login"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
+        android:layout_above="@+id/login_btn"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded_corners"
+        android:text="@string/register"
+        android:textColor="@color/white" />
 
-        />
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/rounded_corners"
+        android:text="@string/login"
+
+        android:textColor="@color/white" />
 
 
 </RelativeLayout>

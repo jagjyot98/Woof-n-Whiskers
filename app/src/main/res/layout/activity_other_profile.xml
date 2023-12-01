@@ -18,7 +18,7 @@
                 android:layout_height="200dp"
                 android:scaleType="fitCenter"
                 android:id="@+id/coverIv"
-                android:background="@color/lightBrown">
+                android:background="@color/lbrown">
 
             </ImageView>
             <LinearLayout
