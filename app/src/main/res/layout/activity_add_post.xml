@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/add_title"
+
             android:id="@+id/pTitleEt"
             android:padding="10dp"
             android:singleLine="true"/>
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_type_of_post"
             android:id="@+id/pTypeEt"
+
             android:padding="10dp"
             android:singleLine="true"/>
         <!--Location-->
@@ -41,6 +43,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_city"
             android:id="@+id/pLocationEt"
+
             android:padding="10dp"
             android:singleLine="true"/>
         <!--Description-->
@@ -50,7 +53,9 @@
             android:hint="@string/enter_description"
             android:inputType="textCapSentences|textMultiLine"
             android:minHeight="120dp"
+
             android:gravity="start"
+
             android:id="@+id/pDescriptionEt"
             android:padding="10dp"
             android:singleLine="true"/>
@@ -58,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pUploadBtn"
+
             android:background="@color/lightBrown"
             android:layout_gravity="end"
             android:text="@string/addpost"/>

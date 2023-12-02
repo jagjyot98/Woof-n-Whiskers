@@ -13,9 +13,14 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="70dp"
+        android:text="@string/register"
         android:textAlignment="center"
-        android:textSize="25dp"
-        android:text="@string/register" />
+        android:textStyle="bold"
+        android:textSize="40dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -74,11 +79,12 @@
 
     <Button
         android:id="@+id/registerBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordTil"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:textSize="20sp"
         android:text="@string/register" />
 
     <TextView
@@ -88,6 +94,7 @@
         android:layout_below="@id/registerBtn"
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
+        android:layout_marginTop="20sp"
         android:textSize="18sp"
         android:text="@string/already_have_an_account_login" />
 

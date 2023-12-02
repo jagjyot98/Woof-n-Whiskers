@@ -21,12 +21,12 @@
     <string name="home">Home</string>
     <string name="services">Services</string>
     <string name="profile">Profile</string>
-    <string name="name">Name</string>
-    <string name="pet_type">Pet Type</string>
+    <string name="name">Name:</string>
+    <string name="pet_type">Pet Type:</string>
     <string name="abc_xyz_com">abc@xyz.com</string>
     <string name="cat_dog">Cat/Dog</string>
     <string name="xxx_xxx_xxxx">xxx-xxx-xxxx</string>
-    <string name="phone_number">Phone number</string>
+    <string name="phone_number">Phone number:</string>
     <string name="logout">Logout</string>
     <string name="search">Search</string>
     <string name="title_activity_add_post">AddPostActivity</string>

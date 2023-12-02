@@ -15,7 +15,9 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:layout_marginTop="150dp"/>
+
 
 
 
@@ -57,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/psdTil"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
 
         android:text="@string/login" />
 
@@ -67,9 +69,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/loginBtn"
         android:layout_centerHorizontal="true"
+
+        android:text="@string/not_have_an_account_register"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:text="@string/not_have_an_account_register" />
+        android:textSize="18sp" />
     <com.google.android.gms.common.SignInButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
