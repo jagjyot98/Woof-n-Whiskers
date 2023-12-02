@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pImageIv"
-            android:background="@color/brown"
+            android:background="@color/lightBrown"
             android:minHeight="200sp"
             android:maxHeight="300sp"
             />
@@ -58,12 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pUploadBtn"
+            android:background="@color/lightBrown"
             android:layout_gravity="end"
-            android:text="@string/addpost"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_corners"/>
-            <!--android:background="@color/brown"-->
-
+            android:text="@string/addpost"/>
 
 
     </LinearLayout>

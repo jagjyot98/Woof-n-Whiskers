@@ -60,12 +60,11 @@
 
     <Button
         android:id="@+id/buttonConfirmSerProv"
-        android:layout_width="104dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:background="@drawable/rounded_corners"
+        android:backgroundTint="#FFFF7373"
         android:text="Confirm"
-        android:textColor="@color/white"
         android:textSize="20sp" />
 </LinearLayout>

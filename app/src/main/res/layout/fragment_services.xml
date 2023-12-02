@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/lbrown"
+            android:background="#FFFF7373"
             android:orientation="vertical">
 
             <ImageView
@@ -59,7 +59,7 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/vector" />
+                android:src="@drawable/vector_dog_prov" />
 
             <TextView
                 android:id="@+id/linkTxtProvServ"
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@color/lbrown"
+            android:background="#FFFF7373"
             android:orientation="vertical">
 
             <ImageView
@@ -85,7 +85,7 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/search_icon" />
+                android:src="@drawable/vector_search" />
 
             <TextView
                 android:id="@+id/linkTxtSeekServ"
