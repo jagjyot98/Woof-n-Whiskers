@@ -36,7 +36,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.SAdapter
             servePet = itemView.findViewById(R.id.servePet);
             serveLocation = itemView.findViewById(R.id.serveLocation);
             serveDesc = itemView.findViewById(R.id.serveDesc);
-
         }
 
         void bindView(final int position, RecyclerViewInterface recyclerViewInterface){
@@ -51,7 +50,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.SAdapter
                 }
             });
         }
-
     }
 
     @NonNull

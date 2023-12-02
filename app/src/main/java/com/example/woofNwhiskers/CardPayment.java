@@ -5,21 +5,44 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.codeseasy.com.firebaseauth.databinding.ActivityCardPaymentBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class CardPayment extends AppCompatActivity {
 
     ActivityCardPaymentBinding cardPayment;
+    FirebaseUser user;
+    FirebaseAuth auth;
+    String name, email, uid, dp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         cardPayment = ActivityCardPaymentBinding.inflate(getLayoutInflater());
         setContentView(cardPayment.getRoot());
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        if (user !=null){
+            //User is signed in stay in my profile
+            //set email of logged in user
+            //name=User.child("Name").getValue();
+
+            email = user.getEmail();
+            uid=user.getUid();
+            Log.i("currentUser",email+uid);
+        }
+        else {
+            //user not signed in, go to login/register
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
         //click listener for button
         cardPayment.payNow.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +64,6 @@ public class CardPayment extends AppCompatActivity {
             actionBar.setDisplayShowHomeEnabled(true);
         }
     }
-
 
 
     private boolean validateInput() {
@@ -81,7 +103,13 @@ public class CardPayment extends AppCompatActivity {
 
             // Toast.makeText(CardPayment.this, "Payment successful!", Toast.LENGTH_SHORT).show();
             clearFields();
+
             Intent intent = new Intent(getApplicationContext(), SplashPayment.class);
+            intent.putExtra("Serv_Id",getIntent().getStringExtra("Serv_Id"));
+            intent.putExtra("User_Id",getIntent().getStringExtra("User_Id"));
+            intent.putExtra("Seeker_Id",uid);
+            intent.putExtra("ServiceDetails",getIntent().getStringExtra("ServiceDetails"));
+
             startActivity(intent);
             finish();
         } else {

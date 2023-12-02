@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.codeseasy.com.firebaseauth.R;
+import com.example.woofNwhiskers.model.UserClass;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -31,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mFnameEdt,mLnameEdt,mEmailEdt,mPasswordEdt;
     Button mRegisterBtn;
     TextView mHaveAccount;
-
+    UserClass NewUser;
     ProgressDialog progressDialog;
 
     private FirebaseAuth mAuth;
@@ -106,25 +107,28 @@ public class RegisterActivity extends AppCompatActivity {
                                 String email = user.getEmail();
                                 String uid = user.getUid();
 
-                                //when user is registered store user info in firebase realtime  database
-                                // using hashmap
-                                HashMap<Object, String> hashMap = new HashMap<>();
-                                // add info in hashmap
-                                hashMap.put("email", email);
-                                hashMap.put("uid", uid);
-                                hashMap.put("Name", fName);// adding these details in profile edit
-                                hashMap.put("phone", "");
-                                hashMap.put("image", "");
-                                hashMap.put("cover", "");
-                                hashMap.put("petType", lName);
+                                NewUser = new UserClass(uid, fName, "", email, "", "", "","");// TextLocation, servDate, servText, petText, TextDesc);  //date.getText(),
 
+//                                //when user is registered store user info in firebase realtime  database
+//                                // using hashmap
+//                                HashMap<Object, String> hashMap = new HashMap<>();
+//                                // add info in hashmap
+//                                hashMap.put("email", email);
+//                                hashMap.put("uid", uid);
+//                                hashMap.put("Name", fName);// adding these details in profile edit
+//                                hashMap.put("NoOfServices","0");
+//                                hashMap.put("phone", "");
+//                                hashMap.put("image", "");
+//                                hashMap.put("cover", "");
+//                                hashMap.put("petType", lName);
 
+//                                databaseReference.child("Services").child(service.getServiceID()).setValue(service);
                                 //firebase database instance
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 //path to store use data  name "USers"
                                 DatabaseReference reference = database.getReference("Users");
                                 //put data within hashmap in database
-                                reference.child(uid).setValue(hashMap);
+                                reference.child(uid).setValue(NewUser);
                             }
                             Toast.makeText(RegisterActivity.this, "Registered...\n"+user.getEmail(), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(RegisterActivity.this,ProfileActivity.class));

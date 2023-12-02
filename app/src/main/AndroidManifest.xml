@@ -21,6 +21,9 @@
         android:theme="@style/Theme.CommunityPage"
         tools:targetApi="31">
         <activity
+            android:name="com.example.woofNwhiskers.ShowHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.woofNwhiskers.SplashPayment"
             android:exported="false" />
         <activity

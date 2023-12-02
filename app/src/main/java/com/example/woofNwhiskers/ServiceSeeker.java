@@ -11,10 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.codeseasy.com.firebaseauth.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -24,6 +27,8 @@ public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInte
     RecyclerView recyclerView;
 
     FirebaseDatabase firebaseDatabase;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser user;
     DatabaseReference databaseReference;
     ServiceAdapter serviceAdapter;
     ArrayList<ServiceClass> services;
@@ -34,6 +39,9 @@ public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInte
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_seeker);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        user=firebaseAuth.getCurrentUser();
 
         recyclerView = findViewById(R.id.servicesList);
 
@@ -49,7 +57,7 @@ public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInte
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         // below line is used to get reference for our database.
-        databaseReference = firebaseDatabase.getReference();      //////////////////
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Services");
 
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -58,14 +66,14 @@ public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInte
         serviceAdapter = new ServiceAdapter(this,services,this);
         recyclerView.setAdapter(serviceAdapter);
 
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        Query query = databaseReference.orderByChild("seekerID").equalTo("");
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.child("Services").getChildren()){
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     ServiceClass service = dataSnapshot.getValue(ServiceClass.class);
-                    
-                    services.add(service);
+                    if(service.getUserID() != user.getUid())
+                        services.add(service);
                 }
                 serviceAdapter.notifyDataSetChanged();
             }
@@ -91,6 +99,7 @@ public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInte
         intent.putExtra("Serv_Type", services.get(position).getServiceType());
         intent.putExtra("Serv_PetType", services.get(position).getPetType());
         intent.putExtra("Serv_Desc", services.get(position).getServiceDesc());
+        intent.putExtra("Serv_Location", services.get(position).getLocation());
         startActivity(intent);
     }
 }

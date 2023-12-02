@@ -2,6 +2,7 @@ package com.example.woofNwhiskers;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,7 +32,7 @@ public class ServiceDetails extends AppCompatActivity {
     FirebaseUser user;
     StorageReference storageReference;
     DatabaseReference databaseReference;
-    String ProvName, ProvImage;
+    String ProvName, ProvImage, email, id;
     @Override
     public void onBackPressed(){
         super.onBackPressed();
@@ -44,12 +45,13 @@ public class ServiceDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_details);
 
-        TextView servDate, servType, servPetType, servDesc, servProvName;
+        TextView servDate, servType, servPetType, servDesc, servProvName, servNoOfServices;
         ImageView displaypic;
         Button buttonProceedPayment;
 
         displaypic = findViewById(R.id.displayPic);
         servProvName = findViewById(R.id.servProvName);
+        servNoOfServices = findViewById(R.id.servProvNoServices);
         servDate = findViewById(R.id.servDate);
         servType = findViewById(R.id.servType);
         servPetType = findViewById(R.id.servPetType);
@@ -72,6 +74,20 @@ public class ServiceDetails extends AppCompatActivity {
         String uid = getIntent().getStringExtra("User_Id");
 
         Query query = databaseReference.orderByChild("uid").equalTo(uid);
+        if (user !=null){
+            //User is signed in stay in my profile
+            //set email of logged in user
+            //name=User.child("Name").getValue();
+
+            email = user.getEmail();
+            id=user.getUid();
+            Log.i("currentUser",email+id);
+        }
+        else {
+            //user not signed in, go to login/register
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -85,6 +101,7 @@ public class ServiceDetails extends AppCompatActivity {
 
                     ProvImage = ds.child("image").getValue().toString();
 
+                    servNoOfServices.setText(ds.child("NoOfServices").getValue().toString());
                     servProvName.setText(ProvName);
                     servDate.setText(getIntent().getStringExtra("Serv_Date"));
                     servType.setText(getIntent().getStringExtra("Serv_Type"));
@@ -113,6 +130,10 @@ public class ServiceDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CardPayment.class);
+                intent.putExtra("Serv_Id",getIntent().getStringExtra("Serv_Id"));
+                intent.putExtra("User_Id",getIntent().getStringExtra("User_Id"));
+                intent.putExtra("Seeker_Id",id);
+                intent.putExtra("ServiceDetails",getIntent().getStringExtra("Serv_Type")+" by: "+ProvName+"\nfor date "+getIntent().getStringExtra("Serv_Date")+"\nat Location: "+getIntent().getStringExtra("Serv_Location")+"\nfor your "+getIntent().getStringExtra("Serv_PetType")+".");
                 startActivity(intent);
                 finish();
             }

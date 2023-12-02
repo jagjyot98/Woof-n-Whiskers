@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import com.example.codeseasy.com.firebaseauth.R;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ public class ServicesFragment extends Fragment {
     Button button;
     TextView textView;
     LinearLayout linkServiceProv, linkServiceSeek;
+    String name, email, uid, dp;
 
     FirebaseUser user;
     // TODO: Rename parameter arguments, choose names that match
@@ -62,11 +65,6 @@ public class ServicesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
     }
 
     @Override
@@ -77,16 +75,24 @@ public class ServicesFragment extends Fragment {
 //        return inflater.inflate(R.layout.fragment_services, container, false);
 
         auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 //        button = findViewById(R.id.logout);
         linkServiceProv = view.findViewById(R.id.linkProvServ);
         linkServiceSeek = view.findViewById(R.id.linkSeekServ);
 
 //        textView = findViewById(R.id.user_details);
-        user = auth.getCurrentUser();
+        if (user !=null){
+            //User is signed in stay in my profile
+            //set email of logged in user
+            //name=User.child("Name").getValue();
 
-        if (user == null){
-            Intent intent = new Intent(getActivity(), MainActivity.class);
-            startActivity(intent);
+            email = user.getEmail();
+            uid=user.getUid();
+            Log.i("currentUser",email+uid);
+        }
+        else {
+            //user not signed in, go to login/register
+            startActivity(new Intent(getContext(), MainActivity.class));
             getActivity().finish();
         }
 //        else {

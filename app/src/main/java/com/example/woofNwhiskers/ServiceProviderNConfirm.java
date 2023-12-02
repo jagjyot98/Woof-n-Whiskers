@@ -59,6 +59,7 @@ public class ServiceProviderNConfirm extends AppCompatActivity{ //implements Ada
 
         firebaseAuth = FirebaseAuth.getInstance();
         user=firebaseAuth.getCurrentUser();
+
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Users");
         storageReference = FirebaseStorage.getInstance().getReference();
@@ -212,7 +213,7 @@ public class ServiceProviderNConfirm extends AppCompatActivity{ //implements Ada
                 }
 
                 //              if(TextUtils.isEmpty(TextDesc))     //userId,
-                service = new ServiceClass(UserID, currentDateandTime, TextLocation, servDate, servText, petText, TextDesc);  //date.getText(),
+                service = new ServiceClass(UserID, currentDateandTime, "", TextLocation, servDate, servText, petText, TextDesc);  //date.getText(),
                 addDatatoFirebase(service);
             }
 

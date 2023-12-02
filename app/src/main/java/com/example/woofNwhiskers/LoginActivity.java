@@ -103,11 +103,6 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-
-
-
-
-
     }
     @Override
     public boolean onSupportNavigateUp(){   //////////

@@ -264,85 +264,6 @@ public class ProfileFragment extends Fragment implements RecyclerViewInterface {
         checkUserStatus();
         return view;
     }
-//    private void loadMyPosts() {        ///////////////////////////////////////////////////////////
-//        //linear layout for recyclerview
-////        LinearLayoutManager layoutManagerPosts = new LinearLayoutManager(getActivity());
-////        //show newest post first, for this load from last
-////        layoutManagerPosts.setStackFromEnd(true);
-////        layoutManagerPosts.setReverseLayout(true);
-//        //set this layout to recyclerview
-////        postsRecyclerView.setLayoutManager(layoutManagerPosts);
-//
-//        //init posts list
-////        DatabaseReference refPosts = FirebaseDatabase.getInstance().getReference("Posts");
-//        //qurey to load posts
-//        /*whenever user publishes a post the uid of this user is also saved as info of post
-//         * so we're retrieving posts having uid equals to uid of current user*/
-////        Query query = refPosts.orderByChild("uid").equalTo(uid);
-//        //get all data from this ref
-//        query.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                postList.clear();
-//                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-//                    ModelPost myPosts = ds.getValue(ModelPost.class);
-//
-//                    //add to list
-//                    postList.add(myPosts);
-//
-//                    //adapter
-//                    adapterPost = new AdapterPost(getActivity(), postList);
-//                    //set this adapter to recyclerview
-//                    postsRecyclerView.setAdapter(adapterPost);
-//                }
-//            }
-////
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                Toast.makeText(getActivity(), "" + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
-
-//    private void loadMyServices() {                             //////////////////////////////////////////////////////////////////
-//        //linear layout for recyclerview
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-//        //show newest post first, for this load from last
-//        layoutManager.setStackFromEnd(true);
-//        layoutManager.setReverseLayout(true);
-//        //set this layout to recyclerview
-//        servicesRecyclerView.setLayoutManager(layoutManager);
-//
-//        //init posts list
-//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Services");
-//        //qurey to load posts
-//        /*whenever user publishes a post the uid of this user is also saved as info of post
-//         * so we're retrieving posts having uid equals to uid of current user*/
-//        Query query = ref.orderByChild("uid").equalTo(uid);
-//        //get all data from this ref
-//        query.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                serviceList.clear();
-//                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-//                    ServiceClass myServices = ds.getValue(ServiceClass.class);
-//
-//                    //add to list
-//                    serviceList.add(myServices);
-//
-//                    //adapter
-//                    adapterServices = new ServiceAdapter(getActivity(), serviceList, this);
-//                    //set this adapter to recyclerview
-//                    servicesRecyclerView.setAdapter(adapterServices);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                Toast.makeText(getActivity(), "" + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
 
     private boolean checkStoragePermission(){
         //check if storage permission isenabled or not
@@ -476,8 +397,6 @@ public class ProfileFragment extends Fragment implements RecyclerViewInterface {
                 else {
                     Toast.makeText(getActivity(), "Please enter "+key, Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
         //add buttons to cancel
@@ -709,7 +628,7 @@ public class ProfileFragment extends Fragment implements RecyclerViewInterface {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
         //inflating menu
-        inflater.inflate(R.menu.menu_main,menu);
+        inflater.inflate(R.menu.menu_profile,menu);
         //hide search from action bar
         menu.findItem(R.id.action_search).setVisible(false);
         super.onCreateOptionsMenu(menu,inflater);
@@ -721,6 +640,9 @@ public class ProfileFragment extends Fragment implements RecyclerViewInterface {
         if (id == R.id.action_logout) {
             firebaseAuth.signOut();
             checkUserStatus();
+        }
+        if (id == R.id.action_showHistory) {
+            startActivity(new Intent(getActivity(),ShowHistoryActivity.class));
         }
         if (id == R.id.action_add_post) {
             startActivity(new Intent(getActivity(),AddPostActivity.class));

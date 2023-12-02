@@ -4,20 +4,30 @@ package com.example.woofNwhiskers;
 public class ServiceClass {
     private String userID;
     private String serviceID;
+    private String seekerID = "";
     private String location;
     private String date;
     private String serviceType;
     private String petType;
     private String serviceDesc;
     public ServiceClass(){}
-    public ServiceClass(String userID, String serviceID, String location, String date, String serviceType, String petType, String serviceDesc) {    //Date date,
+    public ServiceClass(String userID, String serviceID, String seekerID, String location, String date, String serviceType, String petType, String serviceDesc) {    //Date date,
         this.serviceID = serviceID;
         this.userID = userID;
+        this.seekerID = seekerID;
         this.location = location;
         this.date = date;
         this.serviceType = serviceType;
         this.petType = petType;
         this.serviceDesc = serviceDesc;
+    }
+
+    public String getSeekerID() {
+        return seekerID;
+    }
+
+    public void setSeekerID(String seekerID) {
+        this.seekerID = seekerID;
     }
 
     public String getServiceID() {

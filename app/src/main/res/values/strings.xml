@@ -28,6 +28,7 @@
     <string name="xxx_xxx_xxxx">xxx-xxx-xxxx</string>
     <string name="phone_number">Phone number</string>
     <string name="logout">Logout</string>
+    <string name="showHistory">Services Taken</string>
     <string name="search">Search</string>
     <string name="title_activity_add_post">AddPostActivity</string>
     <!-- Strings used for fragments for navigation -->

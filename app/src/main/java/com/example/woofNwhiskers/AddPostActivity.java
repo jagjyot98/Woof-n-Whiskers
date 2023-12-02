@@ -92,8 +92,6 @@ public class AddPostActivity extends AppCompatActivity {
                      dp = ""+ds.child("image").getValue();
                     Log.d("AddPostActivity", "Name: " + name);
                     //Log.d("AddPostActivity", "email: " + email);
-
-
                 }
 
             }
