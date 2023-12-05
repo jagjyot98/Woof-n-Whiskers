@@ -90,4 +90,9 @@
     <string name="_33mins">33mins</string>
     <string name="full_name">Full Name</string>
     <string name="likes">" Likes"</string>
+    <string name="the_description_of_the_post">The description of the post</string>
+    <string name="_1_2k_comments">1.2k Comments</string>
+    <string name="enter_comment">Enter comment...</string>
+    <string name="this_is_actual_comment">This is actual comment</string>
+    <string name="_12_06_2019">12/06/2019</string>
 </resources>
