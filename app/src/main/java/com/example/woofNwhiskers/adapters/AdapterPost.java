@@ -48,9 +48,7 @@ import java.util.Objects;
 public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
     Context context;
     List<ModelPost> postList;
-
     String myUid;
-
     public DatabaseReference likesRef; //for likes database node
     private DatabaseReference postsRef; //reference of posts
 
@@ -150,19 +148,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         holder.likeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //get total number of likes for the post, whose like button clicked
-                //if currently signed in user has not liked it before
-                //increase value by 1, otherwise decrease value by 1
-                //String likesCount = postList.get(position).getpLikes();
-
-                //final int pLikes;
-
-                //if (likesCount != null) {
-                //   pLikes = Integer.parseInt(likesCount);
-                //} else {
-                //   pLikes = 0;
-                //}
-
                 final int pLikes = Integer.parseInt(postList.get(position).getpLikes());
                 mProcessLike = true;
                 //get id of the post clicked
@@ -262,7 +247,6 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
             popupMenu.getMenu().add(Menu.NONE, 0, 0, "Delete");
 
         }
-
 
         //item click listener
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
