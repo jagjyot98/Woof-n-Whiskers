@@ -8,7 +8,11 @@ public class UserClass {
     private String image;
     private String petType;
     private String phone;
-    private String NoOfServices;
+    private String NoOfServices = "0";
+
+    public UserClass() {
+
+    }
 
     public UserClass(String uid, String name, String cover, String email, String image, String petType, String phone, String noOfServices) {
         this.uid = uid;

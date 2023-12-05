@@ -7,50 +7,53 @@
     tools:context=".ServicesFragment">
 
     <!-- TODO: Update blank fragment layout -->
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="30sp"-->
-<!--        android:gravity="center"-->
-<!--        android:text="@string/services" />-->
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="30sp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="@string/services" />-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/headTabServiceProvider"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            android:background="#5B3818"-->
-<!--            android:orientation="horizontal">-->
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/headTabServiceProvider"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:background="#5B3818"-->
+        <!--            android:orientation="horizontal">-->
 
-<!--            &lt;!&ndash;        <Button&ndash;&gt;-->
-<!--            &lt;!&ndash;            android:id="@+id/buttonBack"&ndash;&gt;-->
-<!--            &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-<!--            &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--            &lt;!&ndash;            android:layout_margin="10dp"&ndash;&gt;-->
-<!--            &lt;!&ndash;            tools:ignore="SpeakableTextPresentCheck" />&ndash;&gt;-->
+        <!--            &lt;!&ndash;        <Button&ndash;&gt;-->
+        <!--            &lt;!&ndash;            android:id="@+id/buttonBack"&ndash;&gt;-->
+        <!--            &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--            &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--            &lt;!&ndash;            android:layout_margin="10dp"&ndash;&gt;-->
+        <!--            &lt;!&ndash;            tools:ignore="SpeakableTextPresentCheck" />&ndash;&gt;-->
 
-<!--            <TextView-->
-<!--                android:id="@+id/screenHead"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="10dp"-->
-<!--                android:text="Home"-->
-<!--                android:textColor="#FFFFFF"-->
-<!--                android:textSize="24sp" />-->
-<!--        </LinearLayout>-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/screenHead"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_margin="10dp"-->
+        <!--                android:text="Home"-->
+        <!--                android:textColor="#FFFFFF"-->
+        <!--                android:textSize="24sp" />-->
+        <!--        </LinearLayout>-->
 
         <LinearLayout
             android:id="@+id/linkProvServ"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="#FFFF7373"
+            android:layout_height="200dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="#AA8C6E"
             android:orientation="vertical">
 
             <ImageView
@@ -74,9 +77,12 @@
         <LinearLayout
             android:id="@+id/linkSeekServ"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="#FFFF7373"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="#AA8C6E"
             android:orientation="vertical">
 
             <ImageView

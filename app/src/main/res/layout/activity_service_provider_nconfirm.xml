@@ -12,7 +12,10 @@
         android:id="@+id/serviceDate"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_margin="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Service Date"
         android:inputType="date" />
@@ -64,7 +67,7 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:backgroundTint="#FFFF7373"
+        android:backgroundTint="#AA8C6E"
         android:text="Confirm"
         android:textSize="20sp" />
 </LinearLayout>

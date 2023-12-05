@@ -107,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 String email = user.getEmail();
                                 String uid = user.getUid();
 
-                                NewUser = new UserClass(uid, fName, "", email, "", "", "","");// TextLocation, servDate, servText, petText, TextDesc);  //date.getText(),
+                                NewUser = new UserClass(uid, fName, "", email, "", "", "","0");// TextLocation, servDate, servText, petText, TextDesc);  //date.getText(),
 
 //                                //when user is registered store user info in firebase realtime  database
 //                                // using hashmap

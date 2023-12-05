@@ -32,7 +32,7 @@ public class ServiceDetails extends AppCompatActivity {
     FirebaseUser user;
     StorageReference storageReference;
     DatabaseReference databaseReference;
-    String ProvName, ProvImage, email, id;
+    String ProvName, ProvImage, email, id, phone;
     @Override
     public void onBackPressed(){
         super.onBackPressed();
@@ -67,13 +67,13 @@ public class ServiceDetails extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
+
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Users");
         storageReference = FirebaseStorage.getInstance().getReference();
 
         String uid = getIntent().getStringExtra("User_Id");
 
-        Query query = databaseReference.orderByChild("uid").equalTo(uid);
         if (user !=null){
             //User is signed in stay in my profile
             //set email of logged in user
@@ -89,6 +89,8 @@ public class ServiceDetails extends AppCompatActivity {
             finish();
         }
 
+        Query query = databaseReference.orderByChild("uid").equalTo(uid);
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -100,12 +102,13 @@ public class ServiceDetails extends AppCompatActivity {
 //                    Log.i("ProvName",ProvName);
 
                     ProvImage = ds.child("image").getValue().toString();
+                    phone = ds.child("phone").getValue().toString();
 
-                    servNoOfServices.setText(ds.child("NoOfServices").getValue().toString());
+                    servNoOfServices.setText("No Of Services provided: "+ds.child("NoOfServices").getValue().toString());
                     servProvName.setText(ProvName);
-                    servDate.setText(getIntent().getStringExtra("Serv_Date"));
-                    servType.setText(getIntent().getStringExtra("Serv_Type"));
-                    servPetType.setText(getIntent().getStringExtra("Serv_PetType"));
+                    servDate.setText("Service Date: "+getIntent().getStringExtra("Serv_Date"));
+                    servType.setText("Service type: "+getIntent().getStringExtra("Serv_Type"));
+                    servPetType.setText("For Pet type: "+getIntent().getStringExtra("Serv_PetType"));
                     servDesc.setText(getIntent().getStringExtra("Serv_Desc"));
 
                     try {
@@ -133,7 +136,7 @@ public class ServiceDetails extends AppCompatActivity {
                 intent.putExtra("Serv_Id",getIntent().getStringExtra("Serv_Id"));
                 intent.putExtra("User_Id",getIntent().getStringExtra("User_Id"));
                 intent.putExtra("Seeker_Id",id);
-                intent.putExtra("ServiceDetails",getIntent().getStringExtra("Serv_Type")+" by: "+ProvName+"\nfor date "+getIntent().getStringExtra("Serv_Date")+"\nat Location: "+getIntent().getStringExtra("Serv_Location")+"\nfor your "+getIntent().getStringExtra("Serv_PetType")+".");
+                intent.putExtra("ServiceDetails",getIntent().getStringExtra("Serv_Type")+" by: "+ProvName+"\nContact: "+phone+"\nfor date "+getIntent().getStringExtra("Serv_Date")+"\nat Location: "+getIntent().getStringExtra("Serv_Location")+"\nfor your "+getIntent().getStringExtra("Serv_PetType")+".");
                 startActivity(intent);
                 finish();
             }

@@ -21,6 +21,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInterface{
@@ -72,8 +73,8 @@ public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInte
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     ServiceClass service = dataSnapshot.getValue(ServiceClass.class);
-                    if(service.getUserID() != user.getUid())
-                        services.add(service);
+                    if(!Objects.equals(service.getUserID(), user.getUid()))
+                       services.add(service);
                 }
                 serviceAdapter.notifyDataSetChanged();
             }

@@ -76,6 +76,7 @@ public class ServicesFragment extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
 //        button = findViewById(R.id.logout);
         linkServiceProv = view.findViewById(R.id.linkProvServ);
         linkServiceSeek = view.findViewById(R.id.linkSeekServ);
@@ -114,7 +115,7 @@ public class ServicesFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ServiceProviderNConfirm.class);
                 startActivity(intent);
-                getActivity().finish();
+//                getActivity().finish();
             }
         });
 
@@ -123,7 +124,7 @@ public class ServicesFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ServiceSeeker.class);
                 startActivity(intent);
-                getActivity().finish();
+//                getActivity().finish();
             }
         });
 

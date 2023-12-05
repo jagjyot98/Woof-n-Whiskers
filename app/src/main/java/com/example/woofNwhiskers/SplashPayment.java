@@ -29,7 +29,8 @@ public class SplashPayment extends AppCompatActivity {
     FirebaseUser user;
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
-    Integer NoOfServices;
+    UserClass ProvUser;
+    String NoOfServices = "0";
     DatabaseReference databaseReference;
     String name, email, uid, dp;
 
@@ -43,16 +44,15 @@ public class SplashPayment extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-        if (user !=null){
+        if (user != null) {
             //User is signed in stay in my profile
             //set email of logged in user
             //name=User.child("Name").getValue();
 
             email = user.getEmail();
-            uid=user.getUid();
-            Log.i("currentUser",email+uid);
-        }
-        else {
+            uid = user.getUid();
+            Log.i("currentUser", email + uid);
+        } else {
             //user not signed in, go to login/register
             startActivity(new Intent(this, MainActivity.class));
             finish();
@@ -68,15 +68,56 @@ public class SplashPayment extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Services");
+
 
         String serviceID = getIntent().getStringExtra("Serv_Id");
         String seekerID = getIntent().getStringExtra("Seeker_Id");
         String userProvID = getIntent().getStringExtra("User_Id");
 
-        HashMap<String,Object> serviceResult = new HashMap<>();
-        serviceResult.put("seekerID",seekerID);
+        databaseReference = firebaseDatabase.getReference("Users");
+        Query query = databaseReference.orderByChild("uid").equalTo(userProvID);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    ProvUser = dataSnapshot.getValue(UserClass.class);
 
+                    assert ProvUser != null;
+                    NoOfServices = ProvUser.getNoOfServices();
+                }
+//            Log.i("ProvUser",ProvUser.getuserid());
+//                serviceAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+
+        HashMap<String, Object> UserResult = new HashMap<>();
+        UserResult.put("NoOfServices", String.valueOf(Integer.parseInt(NoOfServices)+1));
+
+        Log.i("NoOfServices",String.valueOf(NoOfServices+1));
+
+        databaseReference.child(userProvID).updateChildren(UserResult)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+//                        showDetailsView.setText(getIntent().getStringExtra("ServiceDetails"));
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+        HashMap<String, Object> serviceResult = new HashMap<>();
+        serviceResult.put("seekerID", seekerID);
+
+        databaseReference = firebaseDatabase.getReference("Services");
         databaseReference.child(serviceID).updateChildren(serviceResult)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -86,44 +127,13 @@ public class SplashPayment extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
-
-        databaseReference = firebaseDatabase.getReference("Users");
-        Query query = databaseReference.orderByChild("uid").equalTo(userProvID);
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    UserClass user = dataSnapshot.getValue(UserClass.class);
-
-                    NoOfServices = Integer.parseInt(user.getNoOfServices()) + 1;
-                }
-//                serviceAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                }
-        });
-
-        HashMap<String,Object> UserResult = new HashMap<>();
-        UserResult.put("NoOfServices",NoOfServices+1);
-        databaseReference.child(serviceID).updateChildren(UserResult)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        showDetailsView.setText(getIntent().getStringExtra("ServiceDetails"));
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
     }
+
+
     @Override
     public boolean onSupportNavigateUp(){
         onBackPressed();//go previous activity

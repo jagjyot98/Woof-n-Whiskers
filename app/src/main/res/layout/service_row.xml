@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:layout_margin="10dp"
     android:background="@drawable/rounded_corners_border"
-    android:backgroundTint="#FFFF7373"
+    android:backgroundTint="#AA8C6E"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp">
@@ -28,7 +28,10 @@
             android:id="@+id/serveDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:text="TextView"
             android:textSize="20sp" />
 
@@ -37,7 +40,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:text="TextView"
             android:textSize="20sp" />
     </RelativeLayout>
@@ -71,14 +77,5 @@
         android:layout_margin="5dp"
         android:text="TextView"
         android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/servePrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Price"
-        android:textAlignment="textEnd"
-        android:textSize="20dp" />
 
 </LinearLayout>

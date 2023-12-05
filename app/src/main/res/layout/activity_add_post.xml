@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pImageIv"
-            android:background="@color/lightBrown"
+            android:background="#AA8C6E"
             android:minHeight="200sp"
             android:maxHeight="300sp"
             />
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pUploadBtn"
-            android:background="@color/lightBrown"
+            android:background="#AA8C6E"
             android:layout_gravity="end"
             android:text="@string/addpost"/>
 

@@ -84,14 +84,6 @@
                 android:text="No. of Services:"
                 android:textSize="16dp" />
 
-            <TextView
-                android:id="@+id/servPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="10dp"
-                android:text="Price:"
-                android:textSize="16dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -113,13 +105,32 @@
             android:textSize="16sp" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/rounded_corners_border">
+
+        <TextView
+            android:id="@+id/servPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Pay $10 to view Service Provider's contact details."
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/buttonProceedPayment"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:backgroundTint="#5B3818"
+        android:backgroundTint="#AA8C6E"
         android:text="Proceed payment"
         android:textColor="#FDFDFC"
         android:textSize="20sp" />

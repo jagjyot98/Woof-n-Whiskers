@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.codeseasy.com.firebaseauth.R;
@@ -50,7 +51,7 @@ public class ServiceProviderNConfirm extends AppCompatActivity{ //implements Ada
 
     Spinner serType, petType;
     ProgressBar progressBar;
-    String servText="", petText="";
+    String servText="", petText="", price ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +124,7 @@ public class ServiceProviderNConfirm extends AppCompatActivity{ //implements Ada
 //        });
 
         //create a list of items for the spinner.
-        String[] services = new String[]{"Select Pet Service", "Pet Sitter", "Pet Walker", "Pet Buddy"};
+        String[] services = new String[]{"Select Pet Service", "Pet Sitter ", "Pet Buddy ", "Pet Walker "};
         String[] pets = new String[]{"Select Pet Type", "Dog", "Cat"};
 
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
@@ -139,6 +140,9 @@ public class ServiceProviderNConfirm extends AppCompatActivity{ //implements Ada
         serType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
                 if(position != 0)
+//                    switch(position){
+//                        case 1:price = String.valueOf(18)
+//                }
                     servText = services[position];
 
             }

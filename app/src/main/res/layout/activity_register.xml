@@ -78,6 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordTil"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="#AA8C6E"
         android:layout_marginTop="20dp"
         android:text="@string/register" />
 
