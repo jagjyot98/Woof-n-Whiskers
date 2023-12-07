@@ -48,7 +48,7 @@ public class ServiceSeeker extends AppCompatActivity implements RecyclerViewInte
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle("Add New Post");
+            actionBar.setTitle("Available Services");
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
         }

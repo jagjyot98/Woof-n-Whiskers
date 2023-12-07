@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightBrown"
     tools:context="com.example.woofNwhiskers.PostDetailActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -20,9 +21,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="3dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="3dp"
                 app:contentPadding="5dp"
+                android:layout_margin="5dp"
                 app:cardUseCompatPadding="true"
                 app:cardBackgroundColor="@color/white">
 
@@ -44,6 +46,7 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/ic_displaypic"
                             android:layout_width="50dp"
+                            android:layout_margin="5dp"
                             app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
                             android:layout_height="50dp"
                             android:background="@color/black"
@@ -135,26 +138,48 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center">
+
                         <Button
+                            android:layout_width="0dp"
                             android:id="@+id/likeBtn"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:paddingStart="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/rounded_corners_border_button"
                             android:text="@string/like"
-                            android:background="@color/white"
-                            android:drawablePadding="5dp"
-                            android:drawableStart="@drawable/ic_like" />
+                            android:drawableStart="@drawable/ic_like"
+                            android:drawablePadding="5dp"/>
+<!--                        <Button-->
+<!--                            android:id="@+id/likeBtn"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:text="@string/like"-->
+<!--                            android:background="@color/white"-->
+<!--                            android:drawablePadding="5dp"-->
+<!--                            android:drawableStart="@drawable/ic_like" />-->
 
                         <Button
                             android:id="@+id/shareBtn"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/share"
+                            android:paddingStart="10dp"
+                            android:background="@drawable/rounded_corners_border_button"
+                            android:drawableStart="@drawable/ic_share"
+                            android:text="@string/share"/>
 
-                            android:drawablePadding="5dp"
-                            android:background="@color/white"
-                            android:drawableStart="@drawable/ic_share" />
+<!--                        <Button-->
+<!--                            android:id="@+id/shareBtn"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:text="@string/share"-->
+
+<!--                            android:drawablePadding="5dp"-->
+<!--                            android:background="@color/white"-->
+<!--                            android:drawableStart="@drawable/ic_share" />-->
                     </LinearLayout>
 
                 </LinearLayout>

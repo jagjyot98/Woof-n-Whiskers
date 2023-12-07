@@ -1,40 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/lightBrown"
+    android:orientation="vertical"
+    android:gravity="center"
     android:padding="30dp"
     tools:context="com.example.woofNwhiskers.MainActivity">
 
-    <ImageView
-        android:layout_height="250dp"
+    <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="250dp"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
+        android:layout_height="250dp"
         android:layout_marginTop="40dp"
-        />
-    
-    <Button
-        android:layout_width="match_parent"
+        android:src="@drawable/logo"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:fontFamily="@font/aladin"
+        android:text='"Connect with fellow pet lovers and effortlessly book premium pet services on Woof-N-Whiskers"'
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+    <Button
         android:id="@+id/register_btn"
-        android:text="@string/register"
-        android:backgroundTint="#AA8C6E"
-        android:layout_above="@+id/login_btn"
-        />
-
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_border_button"
+        android:text="@string/register"
+        android:fontFamily="@font/aladin"
+        android:textSize="25sp" />
+
+    <Button
         android:id="@+id/login_btn"
-        android:text="@string/login"
-        android:backgroundTint="#AA8C6E"
-        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="100dp"
+        android:background="@drawable/rounded_corners_border_button"
+        android:text="@string/login"
+        android:fontFamily="@font/aladin"
+        android:textSize="25sp"
 
         />
 
 
-</RelativeLayout>
+</LinearLayout>

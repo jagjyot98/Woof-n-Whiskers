@@ -64,12 +64,12 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.SAdapter
     public void onBindViewHolder(@NonNull SAdapter holder, int position) {
         ServiceClass service = services.get(position);
 
-        holder.serveID.setText(service.getServiceID());
-        holder.serveDate.setText(service.getDate());
-        holder.serveType.setText(service.getServiceType());
-        holder.servePet.setText(service.getPetType());
-        holder.serveLocation.setText(service.getLocation());
-        holder.serveDesc.setText(service.getServiceDesc());
+        holder.serveID.setText("Service Id: "+service.getServiceID());
+        holder.serveDate.setText("Date: "+service.getDate());
+        holder.serveType.setText("Service: "+service.getServiceType());
+        holder.servePet.setText("Pet: "+service.getPetType());
+        holder.serveLocation.setText("Location: "+service.getLocation());
+        holder.serveDesc.setText("Description: "+service.getServiceDesc());
 
         ((SAdapter) holder).bindView(position, recyclerViewInterface);
     }

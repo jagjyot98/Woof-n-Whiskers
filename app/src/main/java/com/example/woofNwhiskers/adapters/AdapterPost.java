@@ -87,6 +87,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         String pImage = postList.get(position).getpImage();
         String pTimeStamp = postList.get(position).getpTime();
         String pLikes= postList.get(position).getpLikes();// contains like numbers
+        String pComments= postList.get(position).getpComments();// contains like numbers
         //final String likesCount = postList.get(position).getpLikes();
         //final int pLikes = likesCount != null ? Integer.parseInt(likesCount) : 0;
         //convert timestamp to dd/mm/yyyy hh:mm am/pm
@@ -103,6 +104,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
         holder.pDescriptionTv.setText(pDescription);
 
         holder.pLikesTv.setText(pLikes+"Likes");
+        holder.pCommentsTv.setText(pComments+"Comments");
 
         Log.d("AdapterPost", "pLikes: " + pLikes);
         Log.d("AdapterPost", "Descr: " + pDescription);
@@ -217,7 +219,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
                     Change text of like button from "Like" to "Liked"*/
                     holder.likeBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_liked, 0,0,0);
                     holder.likeBtn.setText("Liked");
-                    holder.likeBtn.setTextColor(Color.RED);
+                    holder.likeBtn.setTextColor(Color.WHITE);
                 }
                 else {
                     //user has not liked this post
@@ -359,7 +361,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
     static class MyHolder extends RecyclerView.ViewHolder{
         //views from  row_post.xml
         ImageView uPictureIv,pImage;
-        TextView uNameTv,plocationtv, pTimeTv, pTitleTv,pDescriptionTv,pLikesTv;
+        TextView uNameTv,plocationtv, pTimeTv, pTitleTv,pDescriptionTv,pLikesTv,pCommentsTv;
         ImageButton moreBtn;
         Button likeBtn, commentBtn, shareBtn;
         LinearLayout profileLayout;
@@ -373,6 +375,7 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.MyHolder>{
             plocationtv = itemView.findViewById(R.id.pLocationTv);
             pTimeTv=itemView.findViewById(R.id.pTimeTv);
             pTitleTv = itemView.findViewById(R.id.pTitleTv);
+            pCommentsTv =itemView.findViewById(R.id.pCommentsTv);
             pDescriptionTv = itemView.findViewById(R.id.pDescriptionTv);
             pLikesTv = itemView.findViewById(R.id.pLikesTv);
             moreBtn = itemView.findViewById(R.id.moreBtn);

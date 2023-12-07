@@ -1,14 +1,14 @@
 package com.example.woofNwhiskers.model;
 
 public class ModelPost {
-    String uid, uName, uEmail, uDp, pId, pLikes, pTitle, pType, pLocation, pDescription, pImage, pTime;
+    String uid, uName, uEmail, uDp, pId, pLikes, pTitle, pType, pLocation, pDescription, pImage, pTime, pComments;
 
 
 
     public ModelPost() {
 
     }
-public ModelPost(String uid,String uName,String uEmail,String uDp,String pId,String pLikes,String pTitle,String pType,String pLocation,String pDescription,String pImage,String pTime){
+public ModelPost(String uid,String uName,String uEmail,String uDp,String pId,String pLikes,String pTitle,String pType,String pLocation,String pDescription,String pImage,String pTime, String pComments){
     this.uid=uid;
     this.uName=uName;
     this.uEmail=uEmail;
@@ -21,7 +21,7 @@ public ModelPost(String uid,String uName,String uEmail,String uDp,String pId,Str
     this.pDescription=pDescription;
     this.pImage=pImage;
     this.pTime=pTime;
-
+    this.pComments = pComments;
 
 }
 
@@ -55,6 +55,14 @@ public ModelPost(String uid,String uName,String uEmail,String uDp,String pId,Str
 
     public void setuDp(String uDp) {
         this.uDp = uDp;
+    }
+
+    public String getpComments() {
+        return pComments;
+    }
+
+    public void setpComments(String pComments) {
+        this.pComments = pComments;
     }
 
     public String getpId() {

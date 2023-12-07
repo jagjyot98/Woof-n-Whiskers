@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@color/lightBrown"
     android:orientation="vertical"
     tools:context="com.example.woofNwhiskers.ServiceProviderNConfirm">
 
@@ -63,11 +64,12 @@
 
     <Button
         android:id="@+id/buttonConfirmSerProv"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:backgroundTint="#AA8C6E"
+        android:background="@drawable/rounded_corners_border_button"
         android:text="Confirm"
+        android:padding="10dp"
         android:textSize="20sp" />
 </LinearLayout>

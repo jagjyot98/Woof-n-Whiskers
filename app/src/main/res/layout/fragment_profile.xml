@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="@color/lightBrown"
     tools:context=".ProfileFragment">
 
     <ScrollView
@@ -19,7 +19,7 @@
                 android:id="@+id/petPic"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="#AA8C6E"
+                android:background="#A18366"
                 android:scaleType="fitCenter">
 
             </ImageView>
@@ -193,10 +193,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fab"
+        android:backgroundTint="@color/black"
         android:src="@drawable/ic_edit_white"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10sp"/>
+        android:layout_margin="10sp" />
 
 
 </RelativeLayout>

@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="1dp"
-    app:contentPadding="2dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="3dp"
+    app:contentPadding="5dp"
     app:cardBackgroundColor="@color/white">
 
     <RelativeLayout
@@ -13,8 +14,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/dpcomment"
-
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_displaypic"
             android:layout_width="50dp"
             app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
@@ -26,6 +26,7 @@
             android:layout_toEndOf="@id/dpcomment"
             android:text="@string/name"
             android:textColor="@color/black"
+            android:layout_marginBottom="2dp"
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
@@ -35,6 +36,7 @@
             android:id="@+id/commentTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:layout_below="@id/nameCmt"
             android:layout_toEndOf="@id/dpcomment"
             android:text="@string/this_is_actual_comment"

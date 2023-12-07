@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="@color/lightBrown"
     tools:context="com.example.woofNwhiskers.OtherProfileActivity">
 
 
@@ -18,7 +18,7 @@
             android:layout_height="200dp"
             android:scaleType="fitCenter"
             android:id="@+id/coverIv"
-            android:background="#AA8C6E">
+            android:background="#9F8264">
 
         </ImageView>
         <LinearLayout

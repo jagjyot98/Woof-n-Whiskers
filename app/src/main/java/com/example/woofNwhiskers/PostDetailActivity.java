@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -395,6 +396,7 @@ public class PostDetailActivity extends AppCompatActivity {
                     Change text of like button from "Like" to "Liked"*/
                     likeBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_liked, 0,0,0);
                     likeBtn.setText("Liked");
+                    likeBtn.setTextColor(Color.WHITE);
                 }
                 else {
                     //user has not liked this post
@@ -403,6 +405,7 @@ public class PostDetailActivity extends AppCompatActivity {
                     Change text of like button from "Liked" to "Like"*/
                     likeBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_like, 0,0,0);
                     likeBtn.setText("Like");
+                    likeBtn.setTextColor(Color.BLACK);
                 }
             }
 
